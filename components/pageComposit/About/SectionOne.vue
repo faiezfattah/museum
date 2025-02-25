@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full h-screen flex flex-col justify-center items-center text-center relative text-white">
+    <section class="w-full h-screen flex flex-col justify-center items-center text-center relative">
       <h1 class="text-5xl font-bold">
         <span class="text-gradient">Batik</span> Kita, <br> <span class="text-gradient">Museum</span> Kita.
       </h1>

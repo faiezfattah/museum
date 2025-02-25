@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full flex flex-col gap-4 justify-center items-center py-8 relative text-white" >
+  <footer class="w-full flex flex-col gap-4 justify-center items-center py-8 relative" >
     <div class="flex items-center gap-4">
       <img src="/site-icon.svg" alt="Site Icon" class="w-16 h-16">
       <h3 class="text-2xl font-semibold">Museum Batik Indonesia</h3>

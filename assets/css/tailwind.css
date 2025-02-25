@@ -65,7 +65,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-brand-black text-foreground font-josefin;
+    @apply bg-brand-black text-foreground font-josefin text-brand-white;
   }
 }
 @layer utilities {

@@ -15,6 +15,7 @@ export default {
 			},
     		colors: {
 				'brand-black' : '#1E1E1E',
+				'brand-white' : '#E2DDD4',
 				'brand-brown' : '#A65D15',
 
 				// shadcn vue:

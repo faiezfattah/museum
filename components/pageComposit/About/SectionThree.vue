@@ -1,5 +1,5 @@
 <template>
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-6 py-20 relative text-white full-container">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-6 py-20 relative  full-container">
       <div class="absolute w-[40rem] h-[40rem] opacity-50 top-1/2 left-full -translate-x-1/2 -translate-y-1/2 bg-radial-gradient blur-3xl"></div>
       <img src="/batik-element.svg" alt="" class="absolute top-[-25%] left-[-10%] scale-x-[-1] scale-y-[-1] z-[-1]">
       <img class="rounded-t-full w-2/3" src="/images/patung-batik.png" alt="patung batik">

@@ -1,5 +1,5 @@
 <template>
-    <div class="text-white box-border overflow-hidden relative grid grid-cols-[25svw_repeat(5,1fr)_25svw] grid-rows-[repeat(8,200px)] gap-2 py-16 bg-gradient-to-b to-brand-brown from-brand-black">
+    <div class="box-border overflow-hidden relative grid grid-cols-[25svw_repeat(5,1fr)_25svw] grid-rows-[repeat(8,200px)] gap-2 py-16 bg-gradient-to-b to-brand-brown from-brand-black">
       <p class="row-start-1 col-start-2 col-span-4 row-span-1 content-center">
         Di dalam Museum Batik Indonesia, pengunjung diajak untuk menjelajahi perjalanans batik. Dari proses pembuatan tradisional hingga teknik modern, kami mengungkap kompleksitas dan keindahan seni batik yang telah menginspirasi dunia.
       </p>

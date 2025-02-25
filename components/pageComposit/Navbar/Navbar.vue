@@ -13,11 +13,11 @@ import {
 </script>
 
 <template>
-    <NavigationMenu class="fixed z-10 w-screen flex justify-center left-1/2 -translate-x-1/2">
+    <NavigationMenu class="fixed z-10 w-screen flex justify-center left-1/2 -translate-x-1/2 top-8">
 
         <NavigationMenuList class="flex mx-0 my-auto gap-4
-        px-8 py-4 border-white border-4 bg-white bg-opacity-20 backdrop-blur-sm
-        rounded-full border-opacity-50
+        px-8 py-2 bg-brand-white bg-opacity-20 backdrop-blur-sm
+        border-brand-white border-4 border-solid rounded-full border-opacity-50
         ">
 
             <NavigationMenuItem>
@@ -46,7 +46,7 @@ import {
 @tailwind utilities;
 @layer utilities {
     .style {
-        @apply bg-transparent text-white text-xl;
+        @apply bg-transparent  text-xl;
     }
 }
 </style>
