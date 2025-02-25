@@ -13,7 +13,7 @@ import {
 </script>
 
 <template>
-    <NavigationMenu class="absolute top-0 left-0 w-screen flex justify-center">
+    <NavigationMenu class="absolute top-0 right-0 w-screen flex justify-center">
         <NavigationMenuList class="flex mx-0 my-auto">
 
             <NavigationMenuItem>

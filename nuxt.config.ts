@@ -3,10 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
-
-
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt'],
-  css: ['@/assets/css/global.css'],
+
+  css: ['@/assets/css/tailwind.css'],
 
   shadcn: {
     prefix: '',
@@ -17,4 +16,8 @@ export default defineNuxtConfig({
     componentDir: './components/ui'
   },
 
+  tailwindcss: {
+    editorSupport: true,
+    cssPath: ['@/assets/css/tailwind.css', {injectPosition: 'first'}],
+  }
 })

@@ -1,3 +1,4 @@
 <template>
     <PageCompositLandingHero />
+    <PageCompositLandingDesc />
 </template>

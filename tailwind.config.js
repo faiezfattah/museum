@@ -9,7 +9,15 @@ export default {
     			md: 'calc(var(--radius) - 2px)',
     			sm: 'calc(var(--radius) - 4px)'
     		},
+			fontFamily: {				
+				josefin : ['Josefin Sans', 'sans-serif'],
+				copasetic : ['Copasetic', 'sans-serif'],
+			},
     		colors: {
+				'brand-black' : '#1E1E1E',
+				'brand-brown' : '#A65D15',
+
+				// shadcn vue:
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			card: {
