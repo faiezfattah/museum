@@ -11,5 +11,8 @@
       <a href="https://www.tiktok.com/@mbatik.in" target="_blank">TikTok</a> |
       <a href="https://www.youtube.com/channel/UCukWO5cnEAbS9NOOPWUJHVQ" target="_blank">YouTube</a>
     </div>
+    <div class="flex flex-col">
+      <NuxtLink href="booking">Book Us</NuxtLink>
+    </div>
   </footer>
 </template>

@@ -9,7 +9,7 @@
             Senyap Sejarah
         </h1>
 
-        <PrimitiveButton class="block self-end mt-4 z-10">
+        <PrimitiveButton size="large" class="block self-end mt-4 z-10">
             <a href="https://museumbatik.kemdikbud.go.id/news" target="_blank">
                 Baca Artikel →
             </a>
