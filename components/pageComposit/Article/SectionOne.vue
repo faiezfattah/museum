@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <section class="flex flex-col items-center justify-center relative pointer-events-visible full-container h-screen bg-brand-black">
+    <section class="flex flex-col items-center justify-center relative pointer-events-visible full-container h-screen bg-brand-black overflow-x-clip">
         <h1 class="text-9xl z-10">
             <span class="bg-gradient-to-t to-brand-brown from-brand-white bg-clip-text text-transparent font-bold">Batik</span>, Cerita
             Senyap Sejarah
