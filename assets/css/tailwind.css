@@ -65,10 +65,19 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-josefin;
+    @apply bg-brand-black text-foreground font-josefin;
   }
 }
-
+@layer utilities {
+  /* for content that doesnt need custom background */
+  .container {
+    @apply max-w-[1000px] w-full mx-auto;
+  }
+  /* for content that need CUSTOM background */
+  .full-container {
+    @apply max-w-full w-full mx-auto px-[calc(calc(100svw-1000px)/2)];
+  }
+}
 @font-face {
   font-family: 'Josefin Sans';
   src: url('JosefinSans-VariableFont_wght.ttf') format('truetype');
