@@ -24,6 +24,14 @@ import {
                 <NavigationMenuLink href="/collection" :class="navigationMenuTriggerStyle()">collection</NavigationMenuLink>
             </NavigationMenuItem>
 
+            <NavigationMenuItem>
+                <NavigationMenuLink href="/article" :class="navigationMenuTriggerStyle()">article</NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+                <NavigationMenuLink href="/about" :class="navigationMenuTriggerStyle()">about</NavigationMenuLink>
+            </NavigationMenuItem>
+
         </NavigationMenuList>
     </NavigationMenu>
 </template>
