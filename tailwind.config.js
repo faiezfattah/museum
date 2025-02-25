@@ -14,7 +14,7 @@ export default {
 				copasetic : ['Copasetic', 'sans-serif'],
 			},
     		colors: {
-				'brand-black' : '#1E1E1E',
+				'brand-black' : '#212227',
 				'brand-white' : '#E2DDD4',
 				'brand-brown' : '#A65D15',
 
