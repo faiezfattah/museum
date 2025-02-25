@@ -1,6 +1,6 @@
 <template>
     <section class="w-full h-screen flex flex-col justify-center items-center text-center relative">
-      <h1 class="text-5xl font-bold">
+      <h1 class="text-9xl font-bold">
         <span class="text-gradient">Batik</span> Kita, <br> <span class="text-gradient">Museum</span> Kita.
       </h1>
       <p class="text-lg mt-4">Lihat dibalik layar, apa yang kita jaga.</p>
