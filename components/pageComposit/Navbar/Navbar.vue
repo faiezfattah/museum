@@ -18,7 +18,7 @@ import {
 
             <NavigationMenuList class="gap-4
             px-8 py-2 bg-brand-white bg-opacity-20 backdrop-blur-sm
-            border-brand-white border-4 border-solid rounded-full border-opacity-50">
+            border-brand-white border-2 border-solid rounded-full border-opacity-50">
 
                 <NavigationMenuItem>
                     <NavigationMenuLink href="/" class="style">home</NavigationMenuLink>
