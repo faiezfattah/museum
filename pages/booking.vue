@@ -1,9 +1,9 @@
 <script lang="ts">
-import { type DateValue } from '@internationalized/date'
+import { type DateValue, type CalendarDate, type CalendarDateTime, type ZonedDateTime } from '@internationalized/date'
 interface BookingRequest {
     Name: string | number | undefined,
     Email: string | number | undefined,
-    Date: any | null,
+    Date: string | undefined,
     Signature: string | null
 }
 </script>
@@ -12,12 +12,12 @@ interface BookingRequest {
 const booking = reactive<BookingRequest>({
     Name: undefined,
     Email: undefined,
-    Date: null,
+    Date: undefined,
     Signature: null
 })
 function validate() {
     console.log(booking.Date)
-    if (booking.Name == undefined || booking.Email == undefined || booking.Date == null || booking.Signature == null) {
+    if (booking.Name == undefined || booking.Email == undefined || booking.Date == undefined || booking.Signature == null) {
         console.log("Invalid");
         return;
     }

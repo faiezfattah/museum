@@ -9,8 +9,8 @@ import {
   type DateValue,
   getLocalTimeZone,
 } from '@internationalized/date'
+
 import { CalendarIcon } from 'lucide-vue-next'
-import { ref } from 'vue'
 
 const df = new DateFormatter('id-ID', {
   dateStyle: 'long',
@@ -18,11 +18,12 @@ const df = new DateFormatter('id-ID', {
 
 const value = ref<DateValue>()
 
-const model = defineModel<DateValue | null>()
+const model = defineModel<string>()
 
-watch(value, () => {
-  if (model.value == null) return;
-  model.value = value.value
+watchEffect((val) => {
+  if (value.value != undefined) {
+    model.value = df.format(value.value.toDate(getLocalTimeZone()))
+  }
 })
 </script>
 
