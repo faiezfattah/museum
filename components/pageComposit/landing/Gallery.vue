@@ -14,6 +14,7 @@
       <img class="object-cover h-full w-full object-[60%_center] col-start-1 col-span-1 row-start-6 row-span-3" src="/images/tentang/Ruang_6.jpg" alt="">
       <img class="object-cover h-full w-full object-center col-start-6 col-span-1 row-start-6 row-span-1" src="/images/tentang/Ruang_7.jpg" alt="">
       <img class="object-cover h-full w-full object-right col-start-7 col-span-1 row-start-5 row-span-4" src="/images/tentang/Ruang_5_edit.jpg" alt="">
-      <iframe class="w-full h-full col-start-2 col-span-5 row-start-7 row-span-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5176.083656713058!2d106.89419732641099!3d-6.30619810656098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed663af019f9%3A0x66d890a926a3c6e8!2sMuseum%20Batik%20Indonesia!5e0!3m2!1sen!2sid!4v1733714489698!5m2!1sen!2sid" style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- <iframe class="w-full h-full col-start-2 col-span-5 row-start-7 row-span-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5176.083656713058!2d106.89419732641099!3d-6.30619810656098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed663af019f9%3A0x66d890a926a3c6e8!2sMuseum%20Batik%20Indonesia!5e0!3m2!1sen!2sid!4v1733714489698!5m2!1sen!2sid" style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+      <PrimitiveMap class="col-start-2 col-span-5 row-start-7 row-span-2"/>
     </div>
   </template>

@@ -1,8 +1,12 @@
+<script setup lang="ts">
+const route = useRoute();
+const isAdminPage = computed(() => route.path.startsWith('/admin'));
+</script>
 
 <template>
   <div>
-    <PageCompositNavbar />
+    <PageCompositNavbar v-if="!isAdminPage" />
     <NuxtPage />
-    <PageCompositFooter />
+    <PageCompositFooter v-if="!isAdminPage" />
   </div>
 </template>

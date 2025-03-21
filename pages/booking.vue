@@ -1,48 +1,52 @@
-<script lang="ts">
-import { type DateValue, type CalendarDate, type CalendarDateTime, type ZonedDateTime } from '@internationalized/date'
-interface BookingRequest {
-    Name: string | number | undefined,
-    Email: string | number | undefined,
-    RequestFor: string | undefined,
-    Date: string | undefined,
-    Check: boolean,
-    Signature: string | null
-}
-</script>
-
 <script setup lang="ts">
+import type { BookingData, BookingRequest } from '~/types/BookingData';
+
 const booking = reactive<BookingRequest>({
     Name: undefined,
     Email: undefined,
     RequestFor: undefined,
     Date: undefined,
     Check: false,
-    Signature: null
+    Signature: undefined
 })
-function validate() {
+async function HandleFormSubmit(event: Event) {
     // console.log(booking.Date)
-    if (booking.Name == undefined || booking.Email == undefined || 
-    booking.Date == undefined || booking.Signature == null || 
-    !booking.Check || booking.RequestFor == undefined) {
-        console.log("Invalid");
+
+    if (booking.Name === undefined || booking.Email === undefined || 
+    booking.Date === undefined || booking.Signature === undefined || 
+    !booking.Check || booking.RequestFor === undefined) {
+        console.log("Invalid Form submitted");
         return;
     }
-    console.log("valid!")
+    const request:BookingData = {
+        name: booking.Name,
+        email: booking.Email,
+        date: new Date(booking.Date)
+    }
+    
+    const result = await $fetch('/api/bookings/resource', {
+        method: "POST",
+        body: request
+    })
+    
 }
 </script>
 
 <template>
-    <section class="container h-screen flex flex-col justify-center align-center">
+    <main class="container h-screen flex flex-col justify-center align-center">
         <h1 class="text-9xl font-copasetic uppercase mb-4">Booking</h1>
 
         
         <div class="rounded-2xl border-2 border-brand-white border-solid py-6 px-8 flex gap-12 h-2/3">
-            <div class="w-1/3 h-full rounded-full bg-brand-white">decor</div>
+            <Art class="w-1/3 h-full rounded-full bg-brand-white">decor</Art>
             
-            <div class="w-2/3 flex flex-col justify-around">
+            <form 
+            class="w-2/3 flex flex-col justify-around"
+            @submit.prevent="HandleFormSubmit"
+            >
                 <div>
                     <Label for="name">Name</Label>
-                    <Input id="Name" type="email" v-model="booking.Name" class="rounded-full bg-brand-white border-none text-brand-black"/>
+                    <Input id="Name" type="text" v-model="booking.Name" class="rounded-full bg-brand-white border-none text-brand-black"/>
                 </div>
                 
                 <div>
@@ -51,7 +55,7 @@ function validate() {
                 </div>
                 <div>
                     <Label for="request">Request about</Label>
-                    <Input id="request" type="email" v-model="booking.RequestFor" class="rounded-full bg-brand-white border-none text-brand-black invalid:border-brand-brown invalid:border-4"/>
+                    <Input id="request" type="text" v-model="booking.RequestFor" class="rounded-full bg-brand-white border-none text-brand-black invalid:border-brand-brown invalid:border-4"/>
                 </div>
 
                 <PrimitiveDatePicker v-model="booking.Date" />
@@ -66,8 +70,8 @@ function validate() {
                     <PrimitiveCanvas id="signature" class="w-[300px] h-[100px]" v-model="booking.Signature"/>
                 </div>
                 
-                <PrimitiveButton size="medium" @click="validate">Submit</PrimitiveButton>
-            </div>
+                <PrimitiveButton size="medium" type="submit">Submit</PrimitiveButton>
+            </form>
         </div>
-    </section>
+    </main>
 </template>
