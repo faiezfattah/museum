@@ -1,4 +1,4 @@
-export type BookingRequest = {
+export type BookingForm = {
     Name: string | undefined,
     Email: string | undefined,
     RequestFor: string | undefined,
@@ -6,12 +6,18 @@ export type BookingRequest = {
     Check: boolean,
     Signature: string | undefined
 }
-
+export enum BookingStatus {
+    pending = 'pending',
+    rejected = 'rejected',
+    accepted = 'accepted'
+}
 export type BookingData = {
     id?: number;
+    request_id?: string;
     name: string;
     email: string;
+    about: string;
     date: Date;
-    accepted?: boolean,
+    status?: BookingStatus,
 };
 

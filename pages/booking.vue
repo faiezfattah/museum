@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { BookingData, BookingRequest } from '~/types/BookingData';
+import type { BookingData, BookingForm } from '~/types/BookingData';
 
-const booking = reactive<BookingRequest>({
+const booking = reactive<BookingForm>({
     Name: undefined,
     Email: undefined,
     RequestFor: undefined,
@@ -21,10 +21,11 @@ async function HandleFormSubmit(event: Event) {
     const request:BookingData = {
         name: booking.Name,
         email: booking.Email,
+        about: booking.RequestFor,
         date: new Date(booking.Date)
     }
     
-    const result = await $fetch('/api/bookings', {
+    await $fetch('/api/bookings', {
         method: "POST",
         body: request
     })
@@ -37,11 +38,11 @@ async function HandleFormSubmit(event: Event) {
         <h1 class="text-9xl font-copasetic uppercase mb-4">Booking</h1>
 
         
-        <div class="rounded-2xl border-2 border-brand-white border-solid py-6 px-8 flex gap-12 h-2/3">
-            <Art class="w-1/3 h-full rounded-full bg-brand-white">decor</Art>
+        <div class="rounded-2xl border-2 border-brand-white border-solid flex gap-12 px-8 py-4 justify-between h-2/3">
+            <Art class="w-auto h-full rounded-full bg-brand-white">decor</Art>
             
             <form 
-            class="w-2/3 flex flex-col justify-around"
+            class="w-2/3 flex flex-col justify-around gap-2"
             @submit.prevent="HandleFormSubmit"
             >
                 <div>

@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     editorSupport: true,
     cssPath: ['@/assets/css/tailwind.css', {injectPosition: 'first'}],
   },
-  
   // routeRules: {
   //   '/': { static: true },
   //   '/about': { static: true },
