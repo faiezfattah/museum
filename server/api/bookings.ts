@@ -1,4 +1,4 @@
-import { BookingData, BookingRequest } from "~/types/BookingData";
+import { BookingData } from "~/types/BookingData";
 
 const dummyBookings: BookingData[] = [
     {
@@ -48,6 +48,12 @@ const dummyBookings: BookingData[] = [
         name: "Emily Clark",
         email: "e.clark@email.com",
         date: new Date("2024-03-22")
+    },
+    {
+        id: 9,
+        name: "John Smith",
+        email: "john.smith@email.com",
+        date: new Date("2024-03-15")
     }
 ]
 
@@ -56,6 +62,7 @@ export default defineEventHandler(async (event) =>{
 
     switch(method) {
         case 'GET':
+            console.log(dummyBookings)
             return dummyBookings;
         case 'DELETE':
             const deleteRequest = await readBody<BookingData>(event);
@@ -76,6 +83,14 @@ export default defineEventHandler(async (event) =>{
                 console.log(error);
             }
             return true;
+        case "PATCH":
+            const patchRequest = await readBody<BookingData>(event);
+            const data = dummyBookings.filter(item => item.id == patchRequest.id)[0]
+            data.date = patchRequest.date;
+            data.email = patchRequest.email;
+            data.name = patchRequest.name;
+            data.accepted = patchRequest.accepted
+            console.log("accepted: " + patchRequest.name)
         default:
             return false;
     }

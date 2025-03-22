@@ -24,7 +24,7 @@ async function HandleFormSubmit(event: Event) {
         date: new Date(booking.Date)
     }
     
-    const result = await $fetch('/api/bookings/resource', {
+    const result = await $fetch('/api/bookings', {
         method: "POST",
         body: request
     })

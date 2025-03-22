@@ -3,28 +3,41 @@
 import { ref } from 'vue';
 import type { BookingData } from '~/types/BookingData';
 
-const booking = await useFetch<BookingData[]>('/api/bookings/resource', {
+const booking = await useFetch<BookingData[]>('/api/bookings', {
     method: 'GET'
 });
-// console.log(booking.data.value);
+console.log(booking.data.value);
 const dummyBookingRef = ref<BookingData[] | null>(booking.data.value)
 
 async function HandleDelete(booking: BookingData) {
-    const newList = await $fetch('/api/bookings/resource', {
+    $fetch('/api/bookings', {
         method: 'DELETE',
         body: booking
     })
-    const r = await $fetch<BookingData[]>('/api/bookings/resource', {
+
+    const r = await $fetch<BookingData[]>('/api/bookings', {
     method: 'GET'
     }).then(
         (value) => dummyBookingRef.value = value,
     )
     console.log(r);
 }
+
+async function HandleAccept(booking: BookingData) {
+    await $fetch('/api/bookings', {
+        method: 'PATCH',
+        body: booking
+    })
+    const r = await $fetch<BookingData[]>('/api/bookings', {
+    method: 'GET'
+    }).then(
+        (value) => dummyBookingRef.value = value,
+    )
+}
 </script>
 
 <template>
-    <main class="container h-screen py-32 flex flex-col items-center">
+    <main class="full-container h-screen py-32 overflow-scroll flex flex-col items-center">
         <PageCompositNavbarAdminNavbar />
 
         <div class="flex flex-col gap-4 w-full">
@@ -42,7 +55,7 @@ async function HandleDelete(booking: BookingData) {
                         </p>
                     </div>
                     <PrimitiveButton size="small" @click="() => HandleDelete(booking)" class="bg-amber-800 hover:bg-brand-white">Decline</PrimitiveButton>
-                    <PrimitiveButton size="small" @click="() => HandleDelete(booking)" class="bg-teal-700 hover:bg-brand-white">Accept</PrimitiveButton>
+                    <PrimitiveButton size="small" @click="() => HandleAccept(booking)" class="bg-teal-700 hover:bg-brand-white">Accept</PrimitiveButton>
                 </div>
             </template>
         </div>

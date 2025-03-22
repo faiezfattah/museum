@@ -20,13 +20,13 @@ export default defineNuxtConfig({
     cssPath: ['@/assets/css/tailwind.css', {injectPosition: 'first'}],
   },
   
-  routeRules: {
-    '/': { static: true },
-    '/about': { static: true },
-    '/projects': { static: true },
-    '/contact': { static: true },
-    '/article': { static: true },
-    '/collections': { static: true },
-    '/booking': { static: true },
-  }
+  // routeRules: {
+  //   '/': { static: true },
+  //   '/about': { static: true },
+  //   '/projects': { static: true },
+  //   '/contact': { static: true },
+  //   '/article': { static: true },
+  //   '/collections': { static: true },
+  //   '/booking': { static: true },
+  // }
 })

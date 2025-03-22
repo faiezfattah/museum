@@ -12,5 +12,6 @@ export type BookingData = {
     name: string;
     email: string;
     date: Date;
+    accepted?: boolean,
 };
 
