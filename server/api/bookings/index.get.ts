@@ -1,4 +1,5 @@
-import { FieldPacket, RowDataPacket } from "mysql2/promise";
+import { console } from "inspector";
+import { RowDataPacket } from "mysql2/promise";
 import getConnection from "~/server/utils/db";
 import { BookingData, BookingStatus } from "~/types/BookingData";
 
@@ -7,26 +8,27 @@ export default defineEventHandler(async (event) => {
     const db = await getConnection();
     
     const status = query.status as BookingStatus | undefined;
-    
-    let result: [BookingData[], FieldPacket[]];
-    if (!status) {
-        result = await db.query<BookingData[] & RowDataPacket[]>("SELECT * FROM borrow_request");
+    const request_id = query.request_id as string | undefined;
+    console.log(query)
+    if (request_id != undefined) {
+        const [result] = await db.query<BookingData[] & RowDataPacket[]>(
+            "SELECT * FROM borrow_request WHERE request_id = ?", 
+            [request_id]
+        );
+        return result[0]
+    }
+    else if (status != undefined) {
+        const [result] = await db.query<BookingData[] & RowDataPacket[]>(
+            "SELECT * FROM borrow_request WHERE status = ?", 
+            [status]
+        );
+        return result;
     } 
     else {
-        switch (status) {
-            case BookingStatus.pending:
-                result = await db.query<BookingData[] & RowDataPacket[]>("SELECT * FROM borrow_request WHERE status = 'pending'");
-                break;
-            case BookingStatus.accepted:
-                result = await db.query<BookingData[] & RowDataPacket[]>("SELECT * FROM borrow_request WHERE status = 'accepted'");
-                break;
-            case BookingStatus.rejected:
-                result = await db.query<BookingData[] & RowDataPacket[]>("SELECT * FROM borrow_request WHERE status = 'rejected'");
-                break;
-            default:
-                result = await db.query<BookingData[] & RowDataPacket[]>("SELECT * FROM borrow_request");
-        }
+        const [result] = await db.query<BookingData[] & RowDataPacket[]>(
+            "SELECT * FROM borrow_request"
+        );
+        return result;
     }
-   
-    return result[0];
+    
 });

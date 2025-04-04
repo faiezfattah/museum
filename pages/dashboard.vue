@@ -6,7 +6,7 @@ const Bookings = ref<BookingData[]>([])
 const ActiveStatus = ref<BookingStatus | undefined>(undefined);
 const isLoading = ref<boolean>(false);
 
-async function HandleDelete(booking: BookingData) {
+async function HandleReject(booking: BookingData) {
     booking.status = BookingStatus.rejected;
     await $fetch('/api/bookings', {
         method: 'PATCH',
@@ -26,17 +26,18 @@ async function HandleAccept(booking: BookingData) {
     FetchBookings(ActiveStatus.value);
 }
 async function FetchBookings(status?: BookingStatus) {
-    const query = status ? { status: status } : {};
     ActiveStatus.value = status;
     isLoading.value = true;
     try {
         const r = await $fetch<BookingData[]>('/api/bookings', {
             method: "GET",
-            query: query
+            query: {
+                status: status ?? undefined
+            }
         }).then(
             (value) => Bookings.value = value
         )
-    } 
+    }
     finally {
         isLoading.value = false;
     }
@@ -47,10 +48,7 @@ FetchBookings();
 
 <template>
     <main class="full-container h-screen overflow-scroll flex flex-col items-center ">
-        <h1 class="font-copasetic text-8xl mt-8">ADMIN</h1>
-        <div class="flex gap-4 text-brand-white tracking-[0.2em] mb-4">
-            <p class="font-copasetic text-2xl mb-8" href="/admin/booking-list">BOOKINGS</p>
-        </div>
+        <h1 class="font-copasetic text-8xl mt-8">dashboard</h1>
 
         <div class="mb-4 w-full flex gap-2">
             <PrimitiveButton size="small" @click="() => FetchBookings(BookingStatus.rejected)">Rejected</PrimitiveButton>
@@ -61,7 +59,7 @@ FetchBookings();
 
         <div class="flex flex-col gap-4 w-full">
             <LazyPrimitiveBookingItem v-if="!isLoading && Bookings?.length > 0" v-for="booking in Bookings" :key="booking.id" :booking="booking"
-                @delete="HandleDelete" @accept="HandleAccept" />
+                @delete="HandleReject" @accept="HandleAccept" />
 
             <p v-if="isLoading">Loading...</p>
             

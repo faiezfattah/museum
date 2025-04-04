@@ -1,4 +1,6 @@
 ﻿<script setup lang="ts">
+import { BookingStatus, type BookingData } from '~/types/BookingData';
+
 const props = defineProps<{
   booking: BookingData
 }>();
@@ -10,25 +12,27 @@ const emit = defineEmits<{
 
 <template>
   <div class="flex gap-4">
-    <div class="py-2 px-4 flex w-full justify-between items-center bg-brand-white text-brand-black rounded-full">
+    <NuxtLink :href="`/booking-details/${booking.request_id}`" class="py-2 px-4 flex w-full justify-between items-center bg-brand-white text-brand-black rounded-full">
       <p>
         {{ booking.name }}
       </p>
       <p>
         {{ booking.email }}
       </p>
-    </div>
+    </NuxtLink>
     <LazyPrimitiveButton
-        size="small"
-        @click="() => emit('delete', booking)"
-        class="bg-amber-800 hover:bg-brand-white inline"
+      v-if="booking.status == BookingStatus.pending"
+      size="small"
+      @click="() => emit('delete', booking)"
+      class="bg-amber-800 hover:bg-brand-white inline"
     >
       Decline
     </LazyPrimitiveButton>
     <LazyPrimitiveButton
-        size="small"
-        @click="() => emit('accept', booking)"
-        class="bg-teal-700 hover:bg-brand-white inline"
+      v-if="booking.status == BookingStatus.pending"
+      size="small"
+      @click="() => emit('accept', booking)"
+      class="bg-teal-700 hover:bg-brand-white inline"
     >
       Accept
     </LazyPrimitiveButton>

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const route = useRoute();
-const isAdminPage = computed(() => route.path.startsWith('/admin'));
+const adminRoutes = ['/dashboard', '/login', '/booking-details'];
+
+const isAdminPage = computed(() => 
+  adminRoutes.some(path => route.path.startsWith(path))
+);
 </script>
 
 <template>

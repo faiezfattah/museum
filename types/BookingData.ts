@@ -10,7 +10,7 @@ export enum BookingStatus {
     pending = 'pending',
     rejected = 'rejected',
     accepted = 'accepted'
-}
+} 
 export type BookingData = {
     id?: number;
     request_id?: string;
