@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full bg-black  py-20 px-6 text-center">
+    <section class="w-full bg-brand-white  py-20 px-6 text-center text-brand-black">
       <h2 class="text-4xl font-bold">Mengenal Warisan Budaya Tak Benda</h2>
       <p class="max-w-3xl mx-auto mt-6">
         Batik lebih dari sekadar kain bermotif. Ia adalah kisah peradaban, ekspresi seni, dan identitas bangsa yang diwariskan turun-temurun.
