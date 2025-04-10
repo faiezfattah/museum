@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { BookingStatus, type BookingData } from '~/types/BookingData';
 
 const Bookings = ref<BookingData[]>([])
-const ActiveStatus = ref<BookingStatus | undefined>(undefined);
+const ActiveStatus = ref<BookingStatus | undefined>(BookingStatus.pending);
 const isLoading = ref<boolean>(false);
 
 async function HandleReject(booking: BookingData) {
@@ -43,12 +43,12 @@ async function FetchBookings(status?: BookingStatus) {
     }
 }
 
-FetchBookings();
+FetchBookings(ActiveStatus.value);
 </script>
 
 <template>
-    <main class="full-container h-screen overflow-scroll flex flex-col items-center ">
-        <h1 class="font-copasetic text-8xl mt-8">dashboard</h1>
+    <main class="full-container py-16 h-screen max-h-screen flex flex-col gap-16 items-center ">
+        <h1 class="font-copasetic text-8xl leading-none  uppercase">dashboard</h1>
 
         <div class="mb-4 w-full flex gap-2">
             <PrimitiveButton size="small" @click="() => FetchBookings(BookingStatus.rejected)">Rejected</PrimitiveButton>
@@ -57,7 +57,7 @@ FetchBookings();
             <PrimitiveButton size="small" @click="() => FetchBookings()">All</PrimitiveButton>
         </div>
 
-        <div class="flex flex-col gap-4 w-full">
+        <div class="flex flex-col gap-4 w-full overflow-scroll">
             <LazyPrimitiveBookingItem v-if="!isLoading && Bookings?.length > 0" v-for="booking in Bookings" :key="booking.id" :booking="booking"
                 @delete="HandleReject" @accept="HandleAccept" />
 

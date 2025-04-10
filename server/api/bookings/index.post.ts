@@ -1,5 +1,5 @@
 import getConnection from "~/server/utils/db";
-import { BookingData } from "~/types/BookingData";
+import { BookingData, BookingStatus } from "~/types/BookingData";
 
 export default defineEventHandler(async (event) => {
     const db = await getConnection();
@@ -7,14 +7,14 @@ export default defineEventHandler(async (event) => {
     const postRequest = await readBody<BookingData>(event);
     try {
         const result = await db.query(
-            "UPDATE INTO borrow_request (request_id, name, email, about, request_date, status) VALUES (?, ?, ?, ?, ?, ?)",
+            "INSERT INTO borrow_request (request_id, name, email, about, request_date, status) VALUES (?, ?, ?, ?, ?, ?)",
             [
                 crypto.randomUUID(),
                 postRequest.name,
                 postRequest.email,
-                "about",
+                postRequest.about,
                 postRequest.date,
-                "pending"
+                BookingStatus.pending,
             ]
         )
         console.log(result[0])
