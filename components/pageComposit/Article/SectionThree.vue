@@ -18,12 +18,12 @@ defineProps<{
       :key="item.title"
       :href="item.link" 
       target="_blank"
-      class="flex items-center gap-4 mb-4"
+      class="flex items-center gap-8 mb-4"
     >
-      <img :src="item.image" alt="" class="w-52 h-52 rounded-[calc(1rem-0.5rem)] bg-white border-2 border-solid">
-      <div>
-        <h4 class="normal-case">{{ item.title }}</h4>
-        <p class="text-sm leading-4 mt-2">{{ item.description }}</p>
+      <img :src="item.image" alt="" class="size-64 rounded-xl bg-white border-8 border-solid">
+      <div class="flex flex-col gap-2">
+        <h4 class="uppercase font-copasetic text-4xl tracking-wider">{{ item.title }}</h4>
+        <p class="text-xl tracking-tighter leading-tight mt-2">{{ item.description }}</p>
       </div>
     </a>
   </section>
