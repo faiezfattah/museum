@@ -8,7 +8,7 @@
     <img class="rounded-t-full w-2/3" src="/images/patung-batik.png" alt="patung batik">
     <div class="text-center md:text-left">
       <h3 class="text-3xl font-bold">Museum Batik Indonesia</h3>
-      <p class="mt-4">
+      <p class="mt-4 text-2xl">
         Museum Batik Indonesia didirikan sebagai wujud penetapan Batik Indonesia atas masuknya batik ke dalam
         Representative List of the
         Intangible Cultural Heritage of Humanity oleh UNESCO pada tanggal 2 Oktober 2009.

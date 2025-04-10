@@ -18,6 +18,7 @@ export default {
 				'brand-white' : '#E2DDD4',
 				'brand-white-20': '#e2ddd431',
 				'brand-brown' : '#A65D15',
+        		'radial-accent': 'radial-gradient(circle, #F2F3AE 0%, var(--brand-brown) 30%)',
 
 				// shadcn vue:
     			background: 'hsl(var(--background))',
