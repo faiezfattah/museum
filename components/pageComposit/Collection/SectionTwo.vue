@@ -6,8 +6,8 @@ defineProps<{
 </script>
 
 <template>
-  <section class="flex flex-col items-center justify-center py-16 container">
-    <h2 class="text-3xl font-bold mb-8">{{ name }}</h2>
-    <p class="w-1/2 text-center">{{ description }}</p>
+  <section class="flex flex-col gap-8 items-center justify-center py-16 my-32 container">
+    <h2 class="text-3xl font-bold">{{ name }}</h2>
+    <p class="w-full text-xl leading-tight text-center">{{ description }}</p>
   </section>
 </template>

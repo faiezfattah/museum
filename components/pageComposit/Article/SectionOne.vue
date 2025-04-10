@@ -1,7 +1,3 @@
-<script setup lang="ts">
-// Props if needed for dynamic content
-</script>
-
 <template>
     <section class="flex flex-col items-center justify-center relative pointer-events-visible full-container h-screen bg-brand-black overflow-x-clip">
         <h1 class="text-9xl z-10">

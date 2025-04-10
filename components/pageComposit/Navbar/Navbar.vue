@@ -11,7 +11,7 @@ import {
     <nav class="fixed w-screen top-4 z-50 flex justify-center">
         <NavigationMenu as-child>
 
-            <NavigationMenuList class="gap-4 px-8 py-2 bg-brand-white-20 rounded-full">
+            <NavigationMenuList class="gap-4 px-8 py-2 bg-brand-white-20 rounded-full backdrop-blur-sm">
 
                 <NavigationMenuItem>
                     <NavigationMenuLink href="/" class="style">home</NavigationMenuLink>

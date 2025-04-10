@@ -6,8 +6,8 @@ const props = defineProps<{
 
 <template>
   <section class="container">
-    <h2 class="text-3xl font-bold text-center mb-8">Koleksi Kami</h2>
     <div class="grid grid-cols-3 gap-8">
+      <h2 class="text-8xl font-bold mb-8 font-copasetic uppercase">Koleksi <br> Kami</h2>
       <div v-for="(image, index) in images" :key="index" class="relative">
         <img 
           :src="image" 
