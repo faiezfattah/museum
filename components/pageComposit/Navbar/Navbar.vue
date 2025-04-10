@@ -1,14 +1,9 @@
 <script setup lang="ts">
 import {
     NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuIndicator,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
-    navigationMenuTriggerStyle,
-    NavigationMenuViewport,
 } from '@/components/ui/navigation-menu'
 </script>
 
@@ -16,9 +11,7 @@ import {
     <nav class="fixed w-screen top-4 z-50 flex justify-center">
         <NavigationMenu as-child>
 
-            <NavigationMenuList class="gap-4
-            px-8 py-2 bg-brand-white bg-opacity-20 backdrop-blur-sm
-            border-brand-white border-2 border-solid rounded-full border-opacity-50">
+            <NavigationMenuList class="gap-4 px-8 py-2 bg-brand-white-20 rounded-full">
 
                 <NavigationMenuItem>
                     <NavigationMenuLink href="/" class="style">home</NavigationMenuLink>
@@ -48,7 +41,7 @@ import {
 
 @layer utilities {
     .style {
-        @apply bg-transparent text-xl;
+        @apply text-xl leading-tight;
     }
 }
 </style>

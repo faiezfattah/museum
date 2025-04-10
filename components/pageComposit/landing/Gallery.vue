@@ -1,11 +1,11 @@
 <template>
-    <div class="box-border overflow-hidden relative grid grid-cols-[25svw_repeat(5,1fr)_25svw] grid-rows-[repeat(8,200px)] gap-2 py-16 bg-gradient-to-b to-brand-brown from-brand-black">
-      <p class="row-start-1 col-start-2 col-span-4 row-span-1 content-center">
+    <div class="box-border overflow-hidden relative grid grid-cols-[25svw_repeat(5,1fr)_25svw] grid-rows-[repeat(8,200px)] gap-2 py-16 bg-gradient-to-b to-brand-black via-brand-brown from-brand-black">
+      <p class="row-start-1 col-start-2 col-span-4 row-span-1 content-center text-2xl">
         Di dalam Museum Batik Indonesia, pengunjung diajak untuk menjelajahi perjalanans batik. Dari proses pembuatan tradisional hingga teknik modern, kami mengungkap kompleksitas dan keindahan seni batik yang telah menginspirasi dunia.
       </p>
       <img class="object-cover h-full w-full col-start-6 col-span-2 row-start-1 row-span-3" src="/images/tentang/Ruang_2.jpg" alt="">
       <img class="object-cover h-full w-full col-start-1 col-span-5 row-start-2 row-span-2" src="/images/tentang/Ruang_3_edit.jpg" alt="">
-      <p class="col-start-6 col-span-1 row-start-4 row-span-4">
+      <p class="col-start-6 col-span-1 row-start-4 row-span-4 text-2xl leading-9">
         Setiap motif batik memiliki cerita tersendiri, mencerminkan kearifan lokal dan nilai-nilai budaya yang mendalam.
       </p>
       <img class="object-cover h-full w-full object-left col-start-2 col-span-4 row-start-4 row-span-3" src="/images/open-hall-manequin.avif" alt="">

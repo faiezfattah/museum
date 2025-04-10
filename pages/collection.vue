@@ -26,7 +26,9 @@ onMounted(() => {
 </script>
 
 <template>
-    <PageCompositCollectionSectionOne :batik-image="batikOfTheDay" />
-    <PageCompositCollectionSectionTwo :name="batikInfo.name" :description="batikInfo.description" />
-    <PageCompositCollectionSectionThree :images="images" />
+    <div class="mb-8 box-border">
+        <PageCompositCollectionSectionOne :batik-image="batikOfTheDay" />
+        <PageCompositCollectionSectionTwo :name="batikInfo.name" :description="batikInfo.description" />
+        <PageCompositCollectionSectionThree :images="images" />
+    </div>
 </template>
