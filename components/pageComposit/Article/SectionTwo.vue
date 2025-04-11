@@ -1,5 +1,5 @@
 <script setup lang="ts">
-interface Event {
+export interface Event {
   image: string;
   date: string;
   title: string;
