@@ -14,7 +14,6 @@ try {
     }).then(
         (value) => data.value = value
     )
-    console.log(r);
 } 
 finally {
     isLoading.value = false;
