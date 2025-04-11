@@ -12,21 +12,21 @@ export default defineEventHandler(async (event) => {
     console.log(query)
     if (request_id != undefined) {
         const [result] = await db.query<BookingData[] & RowDataPacket[]>(
-            "SELECT * FROM borrow_request WHERE request_id = ?", 
+            "SELECT * FROM borrow_request WHERE request_id = ? ORDER BY request_date DESC", 
             [request_id]
         );
         return result[0]
     }
     else if (status != undefined) {
         const [result] = await db.query<BookingData[] & RowDataPacket[]>(
-            "SELECT * FROM borrow_request WHERE status = ?", 
+            "SELECT * FROM borrow_request WHERE status = ? ORDER BY request_date DESC", 
             [status]
         );
         return result;
     } 
     else {
         const [result] = await db.query<BookingData[] & RowDataPacket[]>(
-            "SELECT * FROM borrow_request"
+            "SELECT * FROM borrow_request ORDER BY request_date DESC",
         );
         return result;
     }

@@ -47,8 +47,8 @@ FetchBookings(ActiveStatus.value);
 </script>
 
 <template>
-    <main class="full-container py-16 h-screen max-h-screen flex flex-col gap-16 items-center ">
-        <h1 class="font-copasetic text-8xl leading-none  uppercase">dashboard</h1>
+    <main class="full-container py-16 h-screen max-h-screen flex flex-col items-center ">
+        <h1 class="font-copasetic text-8xl leading-none mb-8 uppercase">dashboard</h1>
 
         <div class="mb-4 w-full flex gap-2">
             <PrimitiveButton size="small" @click="() => FetchBookings(BookingStatus.rejected)">Rejected</PrimitiveButton>

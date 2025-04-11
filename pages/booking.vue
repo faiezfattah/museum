@@ -38,7 +38,7 @@ async function HandleFormSubmit(event: Event) {
         <h1 class="text-9xl font-copasetic uppercase mb-4">Booking</h1>
 
         
-        <div class="rounded-2xl border-2 border-brand-white border-solid flex gap-12 px-8 py-8 justify-between h-2/3 bg-brand-white-20">
+        <div class="rounded-2xl border-brand-white border-solid flex gap-12 px-8 py-8 justify-between h-2/3 bg-brand-white-20">
             <Art class="w-auto h-full rounded-full bg-brand-white">decor</Art>
             
             <form 
